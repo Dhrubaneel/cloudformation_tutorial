@@ -1,0 +1,26 @@
+{
+  "name": "cloudformation_tutorial",
+  "version": "1.0.0",
+  "description": "Clouformation code to create aws resources required for News Board project",
+  "main": "",
+  "scripts": {
+    "validate": "aws cloudformation validate-template --template-body file://deploy.yaml",
+    "create": "aws cloudformation create-stack --stack-name cf-tutorial --template-body file://deploy.yaml --parameters file://params.json --capabilities CAPABILITY_AUTO_EXPAND",
+    "update": "aws cloudformation update-stack --stack-name cf-tutorial --template-body file://deploy.yaml --parameters file://params.json --capabilities CAPABILITY_AUTO_EXPAND",
+    "delete" : "aws cloudformation delete-stack --stack-name cf-tutorial"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhrubaneel/cloudformation_tutorial.git"
+  },
+  "keywords": [
+    "cloudformation",
+    "tutorial"
+  ],
+  "author": "Dhrubaneel Das",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Dhrubaneel/cloudformation_tutorial/issues"
+  },
+  "homepage": "https://github.com/Dhrubaneel/cloudformation_tutorial#readme"
+}

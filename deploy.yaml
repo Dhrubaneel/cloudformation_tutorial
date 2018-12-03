@@ -1,0 +1,23 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Cloudformation template to create resources for News Board project'
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  Environment:
+    Description: Environment to deploy. Use staging for limited resources and no alerts.
+    Type: String
+  BucketName:
+    Description: S3 bucket name where all reports will be stored.
+    Type: String
+
+Resources:
+  ReportsS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: Private
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - ServerSideEncryptionByDefault:
+            SSEAlgorithm: AES256
+      BucketName: !Join [ "-", [ !Ref Environment, !Ref BucketName ] ]

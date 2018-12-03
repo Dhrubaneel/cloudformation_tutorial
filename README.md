@@ -16,17 +16,22 @@ The AWS resources used are
     3) firehose
     4) s3
 
-
 ## Vital Commands
 
 ### Create Stack
-`aws cloudformation create-stack --stack-name <stack name> --template-body file://deploy.yaml --parameters file://params.json`
+`aws cloudformation create-stack --stack-name cf-tutorial --template-body file://deploy.yaml --parameters file://params.json --capabilities CAPABILITY_AUTO_EXPAND`
+
+### Update Stack
+`aws cloudformation update-stack --stack-name cf-tutorial --template-body file://deploy.yaml --parameters file://params.json --capabilities CAPABILITY_AUTO_EXPAND`
 
 ### Delete Stack
 `aws cloudformation delete-stack --stack-name <stack name>`
 
+### Validate a stack
+`aws cloudformation validate-template --template-body file://deploy.yaml`
+
 ### Check status of stacks
 `aws cloudformation describe-stacks`
 
-### Validate a stack
-`aws cloudformation validate-template --template-body file://deploy.yaml`
+### List stacks
+`aws cloudformation list-stacks`
