@@ -6,5 +6,9 @@
     {
       "ParameterKey": "BucketName",
       "ParameterValue": "news-reports-store"
+    },
+    {
+      "ParameterKey": "KinesisName",
+      "ParameterValue": "news-reports-stream"
     }
 ]

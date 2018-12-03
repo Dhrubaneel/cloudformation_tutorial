@@ -10,6 +10,9 @@ Parameters:
   BucketName:
     Description: S3 bucket name where all reports will be stored.
     Type: String
+  KinesisName:
+    Description: Reports from different News Reporter applications are put to this stream .
+    Type: String
 
 Resources:
   ReportsS3Bucket:
@@ -21,3 +24,12 @@ Resources:
         - ServerSideEncryptionByDefault:
             SSEAlgorithm: AES256
       BucketName: !Join [ "-", [ !Ref Environment, !Ref BucketName ] ]
+  ReportsKinesis:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      Name: !Join [ "-", [ !Ref Environment, !Ref KinesisName ] ]
+      RetentionPeriodHours: 24
+      ShardCount: 2
+      StreamEncryption:
+        EncryptionType: KMS
+        KeyId: alias/aws/kinesis #Default kms key id
