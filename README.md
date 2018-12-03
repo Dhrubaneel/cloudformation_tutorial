@@ -35,3 +35,15 @@ The AWS resources used are
 
 ### List stacks
 `aws cloudformation list-stacks`
+
+## Note
+When integrating CloudFormation into CI/CD pipeline we need to create a CloudFormation stack on the first run of the pipeline, while  need to update the stack for all following pipeline runs. If we use the AWS CLI this is painful.
+
+Node module cfn-create-or-update can create or update a CloudFormation stack. If no updates are to be performed, no error is thrown. cfn-create-or-update behaves exactly as the AWS CLI regarding input values, output will be different.
+
+### Installation
+`npm install -g cfn-create-or-update`
+
+### To create or update a stack, run:
+`cfn-create-or-update --stack-name cf-tutorial --template-body file://deploy.yaml --parameters file://params.json --capabilities CAPABILITY_AUTO_EXPAND --region ap-south-1`
+
