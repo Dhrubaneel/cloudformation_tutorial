@@ -16,7 +16,7 @@ The AWS resources used are
 3. firehose
 4. s3
     
-Note: This repo only creates S3 and Kinesis and not the full implementation as this is only for giving a basic idea about how things work
+**Note**: This repo only creates S3 and Kinesis and not the full implementation as this is only for giving a basic idea about how things work
 
 ## Vital Commands
 
