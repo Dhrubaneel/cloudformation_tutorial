@@ -48,4 +48,3 @@ Node module cfn-create-or-update can create or update a CloudFormation stack. If
 
 ### To create or update a stack, run:
 `cfn-create-or-update --stack-name cf-tutorial --template-body file://deploy.yaml --parameters file://params.json --capabilities CAPABILITY_AUTO_EXPAND --region ap-south-1`
-
