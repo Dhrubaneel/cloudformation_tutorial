@@ -11,10 +11,10 @@ Assume there is an application named News_Board, which collects news from differ
 There will be one Aws Api Gateway which can be called from Postman to pass data. Api Gateway should be connected to a Kinesis stream. A Firehose should be there to take the data from Kinesis stream and store that in a S3 bucket.
 
 The AWS resources used are 
-    1) api gateway
-    2) kinesis
-    3) firehose
-    4) s3
+    1. api gateway
+    2. kinesis
+    3. firehose
+    4. s3
     
 Note: This repo only creates S3 and Kinesis and not the full implementation as this is only for giving a basic idea about how things work
 
